@@ -9,15 +9,19 @@ what_to_scrape = "PS5 Games"
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 def main():
-    browser = BrowserFactory.create_browser(headless=True)
-    scraper = Scraper(browser)
+    browser = None
     try:
+        browser = BrowserFactory.create_browser(headless=True)
+        scraper = Scraper(browser)
         scraper.search_amazon(what_to_scrape)
         products = scraper.scrape_amazon_products()
         save_to_csv(products)
         save_to_html(products)
+    except Exception as e:
+        logging.error("An error occurred: %s", e, exc_info=True)
     finally:
-        browser.quit()
+        if browser:
+            browser.quit()
 
 if __name__ == "__main__":
     main()
