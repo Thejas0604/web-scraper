@@ -19,7 +19,7 @@ The Amazon Product Scraper is a Python-based tool that uses Selenium to scrape p
 - Saves the scraped data into a CSV file.
 - Generates an HTML file to display the scraped data in a table format.
 - Uses design patterns (Factory and Strategy) for better code organization and maintainability.
-- Use of error handling
+- Error handling implementation
 
 ## Project Structure
 
