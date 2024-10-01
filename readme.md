@@ -45,10 +45,14 @@ The Amazon Product Scraper is a Python-based tool that uses Selenium to scrape p
     ```sh
     pip install -r requirements.txt
     ```
-4. **Run the scraper:**
+## Usage
+1. **Run the scraper:**
     ```sh
     python main.py
     ```
+2. **View the results**
+The scraped data will be saved in ``amazon_products.csv``.
+An HTML file named ``amazon_products.html`` will be generated to display the data in a table format.
 
 ## Dependencies
 
